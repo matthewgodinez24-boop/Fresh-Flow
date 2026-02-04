@@ -611,9 +611,10 @@
         <div class="logo">FreshFlow</div>
         <div class="founder-badge">Founded by Mathew Godinez</div>
         <nav>
+            <a href="#about">About Us</a>
             <a href="#features">Features</a>
             <a href="#demo">Try It</a>
-            <a href="#newsletter">Join Us</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
@@ -635,6 +636,30 @@
                         <p>Ultra Soft Formula</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="features">
+        <div class="section-title">
+            <h2>Our Story</h2>
+            <p>Where nature meets nurture</p>
+        </div>
+        <div style="max-width: 900px; margin: 0 auto; padding: 0 2rem;">
+            <p style="font-size: 1.2rem; line-height: 1.9; color: var(--deep-navy); opacity: 0.9; margin-bottom: 2rem; text-align: center;">
+                FreshFlow was born from a simple belief: <strong>what touches your skin matters</strong>. In a world of harsh chemicals and synthetic fragrances, we saw families struggling with skin sensitivities, allergies, and the growing disconnect from natural wellness.
+            </p>
+            <p style="font-size: 1.2rem; line-height: 1.9; color: var(--deep-navy); opacity: 0.9; margin-bottom: 2rem; text-align: center;">
+                We're more than a laundry softener company—we're advocates for <strong>holistic health</strong>. Every ingredient is thoughtfully sourced from nature, every formula designed to honor your body's natural balance. We believe that true softness comes not from chemicals, but from the gentle embrace of botanicals that have cared for fabrics for centuries.
+            </p>
+            <p style="font-size: 1.2rem; line-height: 1.9; color: var(--deep-navy); opacity: 0.9; margin-bottom: 2rem; text-align: center;">
+                Our scents are inspired by the healing rhythms of nature—<em>slow Mediterranean nights under the stars</em>, where time moves gently and wellness is woven into every moment. Each bottle is crafted to bring that same tranquility into your home, transforming the everyday ritual of laundry into an act of self-care.
+            </p>
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--sky-blue); font-style: italic;">
+                    "Clean clothes, clear conscience, holistic harmony."
+                </p>
+                <p style="margin-top: 1rem; font-weight: 600; color: var(--ocean-blue);">— Mathew Godinez, Founder</p>
             </div>
         </div>
     </section>
@@ -683,21 +708,25 @@
             <h2>Choose Your Signature Scent</h2>
             <p>Select a scent below to discover your perfect match</p>
             <div class="scent-selector">
-                <div class="scent-option" onclick="selectScent('Lavender Dreams', 'Calming lavender fields meet soft vanilla notes for the ultimate relaxation')">
+                <div class="scent-option" onclick="selectScent('Lavender Dreams', 'Like wandering through purple-hued lavender fields in Provence at dusk, this scent blends calming French lavender with warm vanilla undertones. Close your eyes and feel the gentle evening breeze carrying whispers of wild herbs and sun-warmed earth. A tranquil embrace that soothes the mind and softens the soul.')">
                     <h4>🌸 Lavender Dreams</h4>
                     <p>Calming & Soothing</p>
+                    <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 0.5rem; font-style: italic;">Provençal lavender fields at twilight</p>
                 </div>
-                <div class="scent-option" onclick="selectScent('Ocean Breeze', 'Fresh sea air blended with crisp cotton creates an invigorating freshness')">
+                <div class="scent-option" onclick="selectScent('Ocean Breeze', 'The Mediterranean coastline awakens with each sunrise—crisp sea air mingles with sun-bleached linen drying in the coastal wind. Notes of sea salt, fresh cotton, and distant citrus groves create an invigorating freshness that feels like standing at the edge of azure waters, breathing in pure vitality.')">
                     <h4>🌊 Ocean Breeze</h4>
                     <p>Fresh & Crisp</p>
+                    <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 0.5rem; font-style: italic;">Mediterranean mornings by the sea</p>
                 </div>
-                <div class="scent-option" onclick="selectScent('Spring Meadow', 'Wildflowers and morning dew capture the essence of spring awakening')">
+                <div class="scent-option" onclick="selectScent('Spring Meadow', 'Picture a hidden meadow in the Greek countryside, where wild chamomile and jasmine bloom beneath ancient olive trees. The air is sweet with honeysuckle and morning dew, while soft petals dance on gentle breezes. This is the scent of renewal, of nature's quiet poetry written in wildflowers.')">
                     <h4>🌼 Spring Meadow</h4>
                     <p>Floral & Light</p>
+                    <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 0.5rem; font-style: italic;">Greek meadows in eternal spring</p>
                 </div>
-                <div class="scent-option" onclick="selectScent('Citrus Burst', 'Energizing citrus fruits combined with hints of mint for a refreshing boost')">
+                <div class="scent-option" onclick="selectScent('Citrus Burst', 'Stroll through a sun-drenched Amalfi lemon grove where bergamot and sweet orange trees perfume the warm air. Hints of fresh basil and Mediterranean mint add an herbaceous brightness. This is the scent of Italian summer—vibrant, life-affirming, and endlessly energizing.')">
                     <h4>🍋 Citrus Burst</h4>
                     <p>Energizing & Bright</p>
+                    <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 0.5rem; font-style: italic;">Amalfi Coast lemon groves</p>
                 </div>
             </div>
             <div id="demo-result" class="demo-result"></div>
@@ -718,12 +747,46 @@
         </div>
     </section>
 
+    <section id="contact" class="demo-section">
+        <div class="demo-container">
+            <h2>Get in Touch</h2>
+            <p style="margin-bottom: 2rem;">We'd love to hear from you. Whether you have questions about our products, want to share your FreshFlow experience, or explore partnership opportunities.</p>
+            
+            <div style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem; max-width: 600px; margin: 2rem auto;">
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">📧 Email Us</h3>
+                    <a href="/cdn-cgi/l/email-protection#ff929e8b8b979a8898909b96919a85cdcbbf98929e9693d19c9092" style="color: white; font-size: 1.2rem; text-decoration: none; font-weight: 600; display: inline-block; padding: 1rem 2rem; background: rgba(255, 255, 255, 0.2); border-radius: 50px; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255, 255, 255, 0.3)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.2)'">
+                        <span class="__cf_email__" data-cfemail="35585441415d5042525a515c5b504f0701755258545c591b565a58">[email&#160;protected]</span>
+                    </a>
+                </div>
+                
+                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.2);">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 1.5rem;">💬 Send a Message</h3>
+                    <form id="contact-form" onsubmit="handleContactSubmit(event)" style="text-align: left;">
+                        <input type="text" placeholder="Your Name" required style="width: 100%; padding: 1rem; margin-bottom: 1rem; border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 10px; background: rgba(255, 255, 255, 0.1); color: white; font-size: 1rem; outline: none;" onfocus="this.style.borderColor='rgba(255, 255, 255, 0.6)'" onblur="this.style.borderColor='rgba(255, 255, 255, 0.3)'">
+                        
+                        <input type="email" placeholder="Your Email" required style="width: 100%; padding: 1rem; margin-bottom: 1rem; border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 10px; background: rgba(255, 255, 255, 0.1); color: white; font-size: 1rem; outline: none;" onfocus="this.style.borderColor='rgba(255, 255, 255, 0.6)'" onblur="this.style.borderColor='rgba(255, 255, 255, 0.3)'">
+                        
+                        <textarea placeholder="Your Message" required rows="4" style="width: 100%; padding: 1rem; margin-bottom: 1rem; border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 10px; background: rgba(255, 255, 255, 0.1); color: white; font-size: 1rem; outline: none; resize: vertical; font-family: 'Overpass', sans-serif;" onfocus="this.style.borderColor='rgba(255, 255, 255, 0.6)'" onblur="this.style.borderColor='rgba(255, 255, 255, 0.3)'"></textarea>
+                        
+                        <button type="submit" style="width: 100%; padding: 1rem; background: white; color: var(--ocean-blue); border: none; border-radius: 50px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(255, 255, 255, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                            Send Message
+                        </button>
+                    </form>
+                    <div id="contact-success" style="margin-top: 1.5rem; padding: 1rem; background: rgba(127, 212, 193, 0.3); border-radius: 10px; font-weight: 600; opacity: 0; transition: opacity 0.5s ease;">
+                        ✓ Message sent! We'll get back to you soon.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2026 FreshFlow. Founded by Mathew Godinez. All rights reserved.</p>
         <p style="margin-top: 1rem; opacity: 0.6;">Revolutionizing laundry, one load at a time.</p>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         function scrollToSection(sectionId) {
             const section = document.getElementById(sectionId);
             section.scrollIntoView({ behavior: 'smooth' });
@@ -767,6 +830,23 @@
             }, 5000);
         }
 
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('contact-form');
+            const successMessage = document.getElementById('contact-success');
+            
+            // Show success message
+            successMessage.style.opacity = '1';
+            
+            // Clear form
+            form.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.style.opacity = '0';
+            }, 5000);
+        }
+
         // Add scroll-based animations
         const observerOptions = {
             threshold: 0.1,
@@ -782,12 +862,4 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.feature-card').forEach((card, index) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = `all 0.6s ease ${index * 0.1}s`;
-            observer.observe(card);
-        });
-    </script>
-</body>
-</html>
+        document.querySelectorAll('.feature-card').forEach((c
