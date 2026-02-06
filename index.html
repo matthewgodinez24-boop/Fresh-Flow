@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lïnn — Fabric Softener</title>
+    <title>About — lïnn</title>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Suisse+Intl:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -13,6 +13,7 @@
             --soft-pink: #F5E6E6;
             --pastel-green: #C8D5B9;
             --sage: #A4B494;
+            --deep-green: #2D4A3E;
             --terracotta: #C87B5C;
             --charcoal: #3D3D3D;
             --warm-white: #FFFCF7;
@@ -65,6 +66,7 @@
             font-weight: 500;
             letter-spacing: 0.05em;
             color: var(--charcoal);
+            text-decoration: none;
         }
 
         .brand-pronunciation {
@@ -89,172 +91,33 @@
             font-weight: 400;
         }
 
-        nav a:hover {
+        nav a:hover, nav a.active {
             color: var(--terracotta);
         }
 
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
+        /* Page Content */
+        .page-hero {
+            min-height: 50vh;
             display: flex;
             align-items: center;
-            padding: 8rem 10% 4rem;
-            background: linear-gradient(135deg, var(--warm-white) 0%, var(--beige) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, var(--soft-pink) 0%, transparent 70%);
-            opacity: 0.3;
-            border-radius: 50%;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, var(--pastel-green) 0%, transparent 70%);
-            opacity: 0.3;
-            border-radius: 50%;
-        }
-
-        .hero-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: 4.5rem;
-            line-height: 1.1;
-            margin-bottom: 2rem;
-            color: var(--charcoal);
-        }
-
-        .hero p {
-            font-size: 1.125rem;
-            line-height: 1.8;
-            color: var(--charcoal);
-            max-width: 600px;
-            margin-bottom: 3rem;
-            opacity: 0.85;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: var(--charcoal);
-            color: var(--warm-white);
-            text-decoration: none;
-            font-size: 0.875rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            transition: all 0.3s;
-            border: 1px solid var(--charcoal);
-        }
-
-        .cta-button:hover {
-            background: var(--terracotta);
-            border-color: var(--terracotta);
-        }
-
-        /* Color Block Section */
-        .color-blocks {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            min-height: 60vh;
-        }
-
-        .color-block {
-            padding: 6rem 4rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            transition: all 0.4s;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .color-block::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0);
-            transition: background 0.4s;
-            z-index: 1;
-        }
-
-        .color-block:hover::before {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .color-block-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .block-label {
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            opacity: 0.8;
-        }
-
-        .block-title {
-            font-family: 'Crimson Text', Georgia, serif;
-            font-size: 2rem;
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-
-        .block-text {
-            font-size: 0.9rem;
-            line-height: 1.7;
-            opacity: 0.85;
-            max-width: 300px;
-            margin: 0 auto;
-        }
-
-        .block-pink {
-            background: var(--soft-pink);
-            color: var(--charcoal);
-        }
-
-        .block-green {
+            padding: 10rem 10% 6rem;
             background: var(--pastel-green);
+        }
+
+        .page-hero h1 {
+            font-size: 5rem;
             color: var(--charcoal);
-        }
-
-        .block-tan {
-            background: var(--tan);
-            color: var(--warm-white);
-        }
-
-        /* About Section */
-        .about {
-            background: var(--warm-white);
-            padding: 8rem 10%;
+            font-style: italic;
+            max-width: 800px;
         }
 
         .about-content {
-            max-width: 900px;
+            padding: 8rem 10%;
+            background: var(--warm-white);
+        }
+
+        .about-grid {
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -266,312 +129,55 @@
             margin-bottom: 2rem;
         }
 
-        .about h2 {
+        .about-text {
+            max-width: 800px;
+            margin-bottom: 4rem;
+        }
+
+        .about-text h2 {
             font-size: 2.8rem;
             margin-bottom: 2rem;
             line-height: 1.3;
-            color: var(--charcoal);
         }
 
-        .about p {
-            font-size: 1rem;
-            line-height: 1.9;
+        .about-text p {
+            font-size: 1.05rem;
+            line-height: 2;
             color: var(--charcoal);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             opacity: 0.85;
         }
 
         .founder-quote {
-            margin-top: 4rem;
-            padding: 3rem;
+            margin-top: 5rem;
+            padding: 4rem;
             background: var(--beige);
-            border-left: 3px solid var(--terracotta);
+            border-left: 4px solid var(--terracotta);
+            max-width: 900px;
         }
 
         .founder-quote p {
             font-family: 'Crimson Text', Georgia, serif;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-style: italic;
             line-height: 1.6;
             color: var(--charcoal);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             opacity: 1;
         }
 
         .founder-attribution {
-            font-size: 0.875rem;
+            font-size: 0.9rem;
             letter-spacing: 0.05em;
             color: var(--terracotta);
-        }
-
-        /* Features Section */
-        .features {
-            background: var(--beige);
-            padding: 8rem 10%;
-        }
-
-        .features-grid {
-            max-width: 900px;
-            margin: 3rem auto 0;
-            display: grid;
-            gap: 0;
-        }
-
-        .feature-item {
-            background: var(--warm-white);
-            padding: 2.5rem;
-            margin-bottom: 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            border-left: 3px solid transparent;
-        }
-
-        .feature-item:hover {
-            border-left-color: var(--terracotta);
-            transform: translateX(5px);
-        }
-
-        .feature-item.active {
-            border-left-color: var(--soft-pink);
-        }
-
-        .feature-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .feature-title {
-            font-family: 'Crimson Text', Georgia, serif;
-            font-size: 1.75rem;
-            color: var(--charcoal);
-            transition: color 0.3s;
-        }
-
-        .feature-toggle {
-            font-size: 1.5rem;
-            color: var(--tan);
-            transition: transform 0.3s, color 0.3s;
-        }
-
-        .feature-item:hover .feature-toggle {
-            color: var(--terracotta);
-        }
-
-        .feature-item.active .feature-toggle {
-            transform: rotate(45deg);
-            color: var(--soft-pink);
-        }
-
-        .feature-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease;
-        }
-
-        .feature-item.active .feature-content {
-            max-height: 500px;
-        }
-
-        .feature-description {
-            padding-top: 1.5rem;
-            font-size: 1rem;
-            line-height: 1.8;
-            color: var(--charcoal);
-            opacity: 0.85;
-        }
-
-        /* Scents Section */
-        .scents {
-            background: var(--pastel-green);
-            padding: 8rem 10%;
-        }
-
-        .scents-grid {
-            max-width: 1200px;
-            margin: 3rem auto 0;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-
-        .scent-card {
-            background: var(--warm-white);
-            padding: 3rem;
-            transition: all 0.4s;
-            cursor: pointer;
-            border-top: 3px solid transparent;
-        }
-
-        .scent-card:nth-child(1):hover {
-            border-top-color: var(--soft-pink);
-            transform: translateY(-5px);
-        }
-
-        .scent-card:nth-child(2):hover {
-            border-top-color: var(--pastel-green);
-            transform: translateY(-5px);
-        }
-
-        .scent-card:nth-child(3):hover {
-            border-top-color: var(--tan);
-            transform: translateY(-5px);
-        }
-
-        .scent-card:nth-child(4):hover {
-            border-top-color: var(--terracotta);
-            transform: translateY(-5px);
-        }
-
-        .scent-number {
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            color: var(--terracotta);
-            margin-bottom: 1rem;
-        }
-
-        .scent-name {
-            font-family: 'Crimson Text', Georgia, serif;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            color: var(--charcoal);
-        }
-
-        .scent-character {
-            font-size: 0.875rem;
-            color: var(--charcoal);
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.05em;
-            opacity: 0.7;
-        }
-
-        .scent-description {
-            font-size: 0.9375rem;
-            line-height: 1.8;
-            color: var(--charcoal);
-            opacity: 0.85;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: var(--soft-pink);
-            padding: 8rem 10%;
-        }
-
-        .contact-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .contact h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: var(--charcoal);
-        }
-
-        .contact p {
-            color: var(--charcoal);
-            margin-bottom: 3rem;
-            line-height: 1.8;
-            opacity: 0.85;
-        }
-
-        .contact-email {
-            display: inline-block;
-            font-size: 1.25rem;
-            color: var(--charcoal);
-            text-decoration: none;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--charcoal);
-            margin-bottom: 4rem;
-            transition: all 0.3s;
-        }
-
-        .contact-email:hover {
-            color: var(--terracotta);
-            border-bottom-color: var(--terracotta);
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .form-label {
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--charcoal);
-            opacity: 0.7;
-        }
-
-        .form-input,
-        .form-textarea {
-            background: var(--warm-white);
-            border: 1px solid var(--beige);
-            padding: 1rem;
-            color: var(--charcoal);
-            font-size: 1rem;
-            font-family: 'Suisse Intl', sans-serif;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-
-        .form-input:focus,
-        .form-textarea:focus {
-            border-color: var(--terracotta);
-        }
-
-        .form-textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-button {
-            align-self: flex-start;
-            padding: 1rem 2.5rem;
-            background: var(--charcoal);
-            color: var(--warm-white);
-            border: 1px solid var(--charcoal);
-            font-size: 0.875rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-top: 1rem;
-        }
-
-        .form-button:hover {
-            background: var(--terracotta);
-            border-color: var(--terracotta);
-        }
-
-        .form-success {
-            margin-top: 1.5rem;
-            padding: 1rem;
-            background: var(--pastel-green);
-            color: var(--charcoal);
-            font-size: 0.875rem;
-            opacity: 0;
-            transition: opacity 0.5s;
-        }
-
-        .form-success.show {
-            opacity: 1;
+            font-weight: 500;
         }
 
         /* Footer */
         footer {
             background: var(--tan);
             color: var(--warm-white);
-            padding: 3rem 10%;
+            padding: 3rem 5%;
             text-align: center;
             font-size: 0.875rem;
         }
@@ -588,268 +194,80 @@
                 padding: 1.5rem 5%;
             }
 
-            nav {
-                gap: 1.5rem;
+            .page-hero {
+                padding: 8rem 5% 4rem;
             }
 
-            .hero {
-                padding: 6rem 5% 4rem;
+            .page-hero h1 {
+                font-size: 3rem;
             }
 
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            section {
+            .about-content {
                 padding: 5rem 5%;
             }
 
-            .color-blocks {
-                grid-template-columns: 1fr;
+            .founder-quote {
+                padding: 2.5rem;
             }
 
-            .scents-grid {
-                grid-template-columns: 1fr;
+            .founder-quote p {
+                font-size: 1.4rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="brand">
+        <a href="index.html" class="brand" style="text-decoration: none;">
             <div class="brand-name">lïnn</div>
             <div class="brand-pronunciation">lin · en</div>
-        </div>
-        <div style="font-size: 0.85rem; letter-spacing: 0.05em; color: var(--charcoal); font-weight: 500;">
-            Founded by Mathew Godinez
-        </div>
+        </a>
         <nav>
-            <a href="#about">About</a>
-            <a href="#philosophy">Philosophy</a>
-            <a href="#scents">Scents</a>
-            <a href="#contact">Contact</a>
+            <a href="about.html" class="active">About</a>
+            <a href="philosophy.html">Philosophy</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Natural fabric care,<br>refined for modern living</h1>
-            <p>A plant-based softener informed by Mediterranean wisdom, formulated to honour both textile and skin. Each wash becomes a considered act of care.</p>
-            <a href="#scents" class="cta-button">Explore Scents</a>
-        </div>
+    <section class="page-hero">
+        <h1>Founded on the principle that textile care should nourish, not compromise</h1>
     </section>
 
-    <div class="color-blocks">
-        <div class="color-block block-pink">
-            <div class="color-block-content">
-                <div class="block-label">Gentle</div>
-                <h3 class="block-title">Skin first</h3>
-                <p class="block-text">Hypoallergenic formulas tested for even the most sensitive skin</p>
-            </div>
-        </div>
-        <div class="color-block block-green">
-            <div class="color-block-content">
-                <div class="block-label">Natural</div>
-                <h3 class="block-title">Plant-based</h3>
-                <p class="block-text">Botanical ingredients sourced from sustainable Mediterranean farms</p>
-            </div>
-        </div>
-        <div class="color-block block-tan">
-            <div class="color-block-content">
-                <div class="block-label">Lasting</div>
-                <h3 class="block-title">Enduring softness</h3>
-                <p class="block-text">Advanced formulation that preserves fabric integrity wash after wash</p>
-            </div>
-        </div>
-    </div>
-
-    <section id="about" class="about">
-        <div class="about-content">
+    <section class="about-content">
+        <div class="about-grid">
             <div class="section-label">Our Story</div>
-            <h2>Founded on the principle that textile care should nourish, not compromise</h2>
-            <p>lïnn emerged from a fundamental observation: conventional fabric softeners prioritize immediate softness over long-term wellness. We sought to create an alternative—one that respects the integrity of natural fibers while supporting holistic health.</p>
-            <p>Every formulation begins with botanical ingredients, carefully selected for their affinity with skin and fabric alike. We draw inspiration from Mediterranean traditions of textile care, where sun-dried linens and aromatic herbs have defined quality for generations.</p>
-            <p>Our approach is deliberate, unhurried. We believe in transparency of ingredient, clarity of purpose, and the quiet confidence that comes from creating something genuinely considered.</p>
+            
+            <div class="about-text">
+                <h2>Why vinegar?</h2>
+                <p>lïnn emerged from a simple question: why do we soften our clothes with chemicals when nature has already perfected the solution? For generations, people used white vinegar as a natural fabric softener—effective, gentle, and pure. We brought this wisdom back, refined it, and packaged it for modern life.</p>
+                
+                <p>Vinegar's natural acetic acid works at a molecular level to relax fabric fibers, strip away detergent residue, and neutralize odors. No synthetic fragrances masking smells. No petroleum-based softening agents coating your clothes. Just clean, soft textiles that breathe the way they're meant to.</p>
+            </div>
+
+            <div class="about-text">
+                <h2>The seed oil problem</h2>
+                <p>Most fabric softeners rely on seed oils and synthetic derivatives—cheap fillers that coat fabrics, trap odors, and irritate sensitive skin. These ingredients break down into microplastics, harm waterways, and create dependency on harsh chemicals to maintain softness.</p>
+                
+                <p>We took a different path. Every ingredient in lïnn is plant-derived, biodegradable, and completely free from seed oils and synthetics. What you get is genuine softness—not a chemical coating masquerading as care.</p>
+            </div>
+
+            <div class="about-text">
+                <h2>Holistic health starts with what touches your skin</h2>
+                <p>Your clothes are in constant contact with your body. What softens them matters. We formulated lïnn for people who understand that holistic health isn't just about what you eat—it's about every product that enters your home.</p>
+                
+                <p>Hypoallergenic. Dermatologically tested. Safe for the most sensitive skin. Free from everything artificial. This is fabric care that aligns with how you want to live.</p>
+            </div>
+
             <div class="founder-quote">
-                <p>"True softness emerges from care, not chemistry."</p>
+                <p>"I created lïnn because I couldn't find a fabric softener that met my standards for natural living. Everything on the market was full of seed oils, synthetic fragrances, and chemicals I couldn't pronounce. So I went back to basics: vinegar, plants, and honest ingredients."</p>
                 <div class="founder-attribution">— Mathew Godinez, Founder</div>
             </div>
         </div>
     </section>
 
-    <section id="philosophy" class="features">
-        <div class="about-content" style="margin-bottom: 3rem;">
-            <div class="section-label">Our Philosophy</div>
-            <h2>Six principles that guide our formulations</h2>
-        </div>
-        <div class="features-grid">
-            <div class="feature-item" onclick="toggleFeature(this)">
-                <div class="feature-header">
-                    <h3 class="feature-title">Plant-based composition</h3>
-                    <span class="feature-toggle">+</span>
-                </div>
-                <div class="feature-content">
-                    <p class="feature-description">We source botanical ingredients exclusively—no synthetic fragrances, no petrochemical derivatives. Each component is selected for its proven efficacy and gentle interaction with skin. Our formulas respect the body's natural chemistry, working in harmony rather than opposition.</p>
-                </div>
-            </div>
-
-            <div class="feature-item" onclick="toggleFeature(this)">
-                <div class="feature-header">
-                    <h3 class="feature-title">Concentrated formula</h3>
-                    <span class="feature-toggle">+</span>
-                </div>
-                <div class="feature-content">
-                    <p class="feature-description">Minimal water, maximum efficacy. Our concentrated approach reduces packaging, lowers shipping impact, and ensures each bottle delivers sustained performance. A measured capful suffices for even the largest loads—economy through considered design.</p>
-                </div>
-            </div>
-
-            <div class="feature-item" onclick="toggleFeature(this)">
-                <div class="feature-header">
-                    <h3 class="feature-title">Dermatologically tested</h3>
-                    <span class="feature-toggle">+</span>
-                </div>
-                <div class="feature-content">
-                    <p class="feature-description">Hypoallergenic and pH-balanced for sensitive skin. Our formulations undergo rigorous dermatological testing to ensure compatibility across skin types, including those prone to eczema and dermatitis. Safe for infants, gentle for all.</p>
-                </div>
-            </div>
-
-            <div class="feature-item" onclick="toggleFeature(this)">
-                <div class="feature-header">
-                    <h3 class="feature-title">Fiber preservation</h3>
-                    <span class="feature-toggle">+</span>
-                </div>
-                <div class="feature-content">
-                    <p class="feature-description">Advanced botanical polymers coat fibers without compromising breathability or absorbency. Colors remain vibrant, fabrics retain their original hand-feel. We extend the lifespan of your textiles through chemistry that respects material integrity.</p>
-                </div>
-            </div>
-
-            <div class="feature-item" onclick="toggleFeature(this)">
-                <div class="feature-header">
-                    <h3 class="feature-title">Lasting fragrance</h3>
-                    <span class="feature-toggle">+</span>
-                </div>
-                <div class="feature-content">
-                    <p class="feature-description">Essential oil complexes provide subtle, enduring scent without overwhelming. Our fragrances develop gradually, revealing different notes throughout the day—an olfactory experience informed by perfumery tradition, never synthetic imitation.</p>
-                </div>
-            </div>
-
-            <div class="feature-item" onclick="toggleFeature(this)">
-                <div class="feature-header">
-                    <h3 class="feature-title">Sustainable packaging</h3>
-                    <span class="feature-toggle">+</span>
-                </div>
-                <div class="feature-content">
-                    <p class="feature-description">Post-consumer recycled materials form our bottles, themselves fully recyclable. We've eliminated unnecessary secondary packaging, reduced bottle weight, and partnered with ocean plastic recovery initiatives. Every purchase contributes to marine conservation efforts.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="scents" class="scents">
-        <div class="about-content" style="margin-bottom: 2rem;">
-            <div class="section-label">Scent Collection</div>
-            <h2>Four distinct compositions, each a study in botanical harmony</h2>
-        </div>
-        <div class="scents-grid">
-            <div class="scent-card">
-                <div class="scent-number">01</div>
-                <h3 class="scent-name">Lavender Twilight</h3>
-                <p class="scent-character">Calming · Herbaceous · Warm</p>
-                <p class="scent-description">French lavender absolute meets warm vanilla bean, grounded by earthy vetiver. Evokes the stillness of Provençal fields at dusk—purple blooms releasing their fragrance as heat gives way to evening coolness.</p>
-            </div>
-
-            <div class="scent-card">
-                <div class="scent-number">02</div>
-                <h3 class="scent-name">Coastal Morning</h3>
-                <p class="scent-character">Fresh · Mineral · Crisp</p>
-                <p class="scent-description">Sea salt and sun-bleached linen, brightened by bergamot and coastal sage. The scent of Mediterranean mornings—washing hung to dry in salted air, stone walls warming under early light.</p>
-            </div>
-
-            <div class="scent-card">
-                <div class="scent-number">03</div>
-                <h3 class="scent-name">Garden at Dawn</h3>
-                <p class="scent-character">Floral · Green · Delicate</p>
-                <p class="scent-description">Jasmine and wild chamomile bloom among dewy grasses, softened by white musk. A hidden garden in the Greek countryside, where morning reveals overnight flowering and the earth smells of renewal.</p>
-            </div>
-
-            <div class="scent-card">
-                <div class="scent-number">04</div>
-                <h3 class="scent-name">Citrus Grove</h3>
-                <p class="scent-character">Bright · Aromatic · Verdant</p>
-                <p class="scent-description">Amalfi lemon and bitter orange, layered with fresh basil and mint. The vitality of Italian coastal groves—fruit-laden branches overhead, herb gardens below, sun filtering through leaves.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="contact-content">
-            <div class="section-label">Correspondence</div>
-            <h2>We welcome your enquiries</h2>
-            <p>For questions regarding formulations, wholesale partnerships, or general correspondence, please reach out directly.</p>
-            
-            <a href="mailto:mathewgodinez@berkeley.edu" class="contact-email">mathewgodinez@berkeley.edu</a>
-
-            <form class="contact-form" onsubmit="handleContactSubmit(event)">
-                <div class="form-group">
-                    <label class="form-label" for="name">Name</label>
-                    <input type="text" id="name" class="form-input" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="email">Email</label>
-                    <input type="email" id="email" class="form-input" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="message">Message</label>
-                    <textarea id="message" class="form-textarea" required></textarea>
-                </div>
-                <button type="submit" class="form-button">Send Message</button>
-                <div id="form-success" class="form-success">
-                    Message received. We'll respond within 48 hours.
-                </div>
-            </form>
-        </div>
-    </section>
-
     <footer>
         <p>© 2026 lïnn. Founded by Mathew Godinez.</p>
-        <p style="margin-top: 1rem; opacity: 0.8;">Holistic care for modern textiles</p>
+        <p style="margin-top: 1rem; opacity: 0.8;">Natural fabric care for modern living</p>
     </footer>
-
-    <script>
-        function toggleFeature(element) {
-            const isActive = element.classList.contains('active');
-            
-            document.querySelectorAll('.feature-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            
-            if (!isActive) {
-                element.classList.add('active');
-            }
-        }
-
-        function handleContactSubmit(event) {
-            event.preventDefault();
-            const form = event.target;
-            const successMessage = document.getElementById('form-success');
-            
-            successMessage.classList.add('show');
-            form.reset();
-            
-            setTimeout(() => {
-                successMessage.classList.remove('show');
-            }, 5000);
-        }
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-    </script>
 </body>
 </html>
