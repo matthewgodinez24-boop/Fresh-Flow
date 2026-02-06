@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — lïnn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Suisse+Intl:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FAF7F2;
+            --beige: #E8DCC8;
+            --tan: #C9B8A0;
+            --soft-pink: #F5E6E6;
+            --pastel-green: #C8D5B9;
+            --sage: #A4B494;
+            --deep-green: #2D4A3E;
+            --terracotta: #C87B5C;
+            --charcoal: #3D3D3D;
+            --warm-white: #FFFCF7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Suisse Intl', -apple-system, sans-serif;
+            background: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(250, 247, 242, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--beige);
+        }
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .brand-name {
+            font-family: 'Suisse Intl', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--charcoal);
+            text-decoration: none;
+        }
+
+        .brand-pronunciation {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            font-weight: 400;
+        }
+
+        nav {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+            font-weight: 400;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--terracotta);
+        }
+
+        /* Page Content */
+        .page-hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            padding: 10rem 10% 6rem;
+            background: var(--soft-pink);
+        }
+
+        .page-hero h1 {
+            font-size: 5rem;
+            color: var(--charcoal);
+            font-style: italic;
+            max-width: 800px;
+        }
+
+        .contact-content {
+            padding: 8rem 10%;
+            background: var(--warm-white);
+        }
+
+        .contact-grid {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            margin-bottom: 2rem;
+        }
+
+        .contact-intro {
+            margin-bottom: 4rem;
+        }
+
+        .contact-intro p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--charcoal);
+            opacity: 0.85;
+            margin-bottom: 3rem;
+        }
+
+        .contact-email {
+            display: inline-block;
+            font-size: 1.4rem;
+            color: var(--charcoal);
+            text-decoration: none;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--charcoal);
+            margin-bottom: 4rem;
+            transition: all 0.3s;
+        }
+
+        .contact-email:hover {
+            color: var(--terracotta);
+            border-bottom-color: var(--terracotta);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 700px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--charcoal);
+            opacity: 0.7;
+            font-weight: 500;
+        }
+
+        .form-input,
+        .form-textarea {
+            background: var(--cream);
+            border: 1px solid var(--beige);
+            padding: 1rem;
+            color: var(--charcoal);
+            font-size: 1rem;
+            font-family: 'Suisse Intl', sans-serif;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            border-color: var(--terracotta);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .form-button {
+            align-self: flex-start;
+            padding: 1.25rem 3rem;
+            background: var(--charcoal);
+            color: var(--warm-white);
+            border: 1px solid var(--charcoal);
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
+        .form-button:hover {
+            background: var(--terracotta);
+            border-color: var(--terracotta);
+        }
+
+        .form-success {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: var(--pastel-green);
+            color: var(--charcoal);
+            font-size: 0.875rem;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .form-success.show {
+            opacity: 1;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--tan);
+            color: var(--warm-white);
+            padding: 3rem 5%;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            header {
+                flex-direction: column;
+                gap: 1.5rem;
+                padding: 1.5rem 5%;
+            }
+
+            .page-hero {
+                padding: 8rem 5% 4rem;
+            }
+
+            .page-hero h1 {
+                font-size: 3rem;
+            }
+
+            .contact-content {
+                padding: 5rem 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="brand" style="text-decoration: none;">
+            <div class="brand-name">lïnn</div>
+            <div class="brand-pronunciation">lin · en</div>
+        </a>
+        <nav>
+            <a href="about.html">About</a>
+            <a href="philosophy.html">Philosophy</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <h1>We welcome your enquiries</h1>
+    </section>
+
+    <section class="contact-content">
+        <div class="contact-grid">
+            <div class="section-label">Get in Touch</div>
+            
+            <div class="contact-intro">
+                <p>For questions regarding formulations, wholesale partnerships, press enquiries, or general correspondence, please reach out directly.</p>
+                
+                <a href="mailto:mathewgodinez@berkeley.edu" class="contact-email">mathewgodinez@berkeley.edu</a>
+            </div>
+
+            <div class="section-label">Send a Message</div>
+            
+            <form class="contact-form" onsubmit="handleContactSubmit(event)">
+                <div class="form-group">
+                    <label class="form-label" for="name">Name</label>
+                    <input type="text" id="name" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" id="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="subject">Subject</label>
+                    <input type="text" id="subject" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="message">Message</label>
+                    <textarea id="message" class="form-textarea" required></textarea>
+                </div>
+                <button type="submit" class="form-button">Send Message</button>
+                <div id="form-success" class="form-success">
+                    ✓ Message received. We'll respond within 48 hours.
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 lïnn. Founded by Mathew Godinez.</p>
+        <p style="margin-top: 1rem; opacity: 0.8;">Natural fabric care for modern living</p>
+    </footer>
+
+    <script>
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const successMessage = document.getElementById('form-success');
+            
+            successMessage.classList.add('show');
+            form.reset();
+            
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
