@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosophy — lïnn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Suisse+Intl:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FAF7F2;
+            --beige: #E8DCC8;
+            --tan: #C9B8A0;
+            --soft-pink: #F5E6E6;
+            --pastel-green: #C8D5B9;
+            --sage: #A4B494;
+            --deep-green: #2D4A3E;
+            --terracotta: #C87B5C;
+            --charcoal: #3D3D3D;
+            --warm-white: #FFFCF7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Suisse Intl', -apple-system, sans-serif;
+            background: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(250, 247, 242, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--beige);
+        }
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .brand-name {
+            font-family: 'Suisse Intl', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--charcoal);
+            text-decoration: none;
+        }
+
+        .brand-pronunciation {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            font-weight: 400;
+        }
+
+        nav {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+            font-weight: 400;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--terracotta);
+        }
+
+        /* Page Content */
+        .page-hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            padding: 10rem 10% 6rem;
+            background: var(--beige);
+        }
+
+        .page-hero h1 {
+            font-size: 5rem;
+            color: var(--charcoal);
+            font-style: italic;
+            max-width: 900px;
+        }
+
+        .philosophy-content {
+            padding: 8rem 10%;
+            background: var(--warm-white);
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            margin-bottom: 3rem;
+        }
+
+        .features-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            gap: 0;
+        }
+
+        .feature-item {
+            background: var(--cream);
+            padding: 2.5rem;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-left: 3px solid transparent;
+        }
+
+        .feature-item:hover {
+            border-left-color: var(--terracotta);
+            transform: translateX(5px);
+        }
+
+        .feature-item.active {
+            border-left-color: var(--soft-pink);
+            background: var(--warm-white);
+        }
+
+        .feature-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .feature-title {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 1.75rem;
+            color: var(--charcoal);
+            transition: color 0.3s;
+        }
+
+        .feature-toggle {
+            font-size: 1.5rem;
+            color: var(--tan);
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .feature-item:hover .feature-toggle {
+            color: var(--terracotta);
+        }
+
+        .feature-item.active .feature-toggle {
+            transform: rotate(45deg);
+            color: var(--soft-pink);
+        }
+
+        .feature-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .feature-item.active .feature-content {
+            max-height: 500px;
+        }
+
+        .feature-description {
+            padding-top: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--charcoal);
+            opacity: 0.85;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--tan);
+            color: var(--warm-white);
+            padding: 3rem 5%;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            header {
+                flex-direction: column;
+                gap: 1.5rem;
+                padding: 1.5rem 5%;
+            }
+
+            .page-hero {
+                padding: 8rem 5% 4rem;
+            }
+
+            .page-hero h1 {
+                font-size: 3rem;
+            }
+
+            .philosophy-content {
+                padding: 5rem 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="brand" style="text-decoration: none;">
+            <div class="brand-name">lïnn</div>
+            <div class="brand-pronunciation">lin · en</div>
+        </a>
+        <nav>
+            <a href="about.html">About</a>
+            <a href="philosophy.html" class="active">Philosophy</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <h1>Six principles that guide every formulation</h1>
+    </section>
+
+    <section class="philosophy-content">
+        <div class="section-label">Our Approach</div>
+        
+        <div class="features-grid">
+            <div class="feature-item" onclick="toggleFeature(this)">
+                <div class="feature-header">
+                    <h3 class="feature-title">Vinegar-based foundation</h3>
+                    <span class="feature-toggle">+</span>
+                </div>
+                <div class="feature-content">
+                    <p class="feature-description">White vinegar has been used for fabric care for centuries—and for good reason. Its natural acetic acid gently softens fibers, removes detergent buildup, and neutralizes odors at their source. We've refined this time-tested approach into a modern, convenient pod form that delivers consistent results without the vinegar smell once dried.</p>
+                </div>
+            </div>
+
+            <div class="feature-item" onclick="toggleFeature(this)">
+                <div class="feature-header">
+                    <h3 class="feature-title">Zero seed oils</h3>
+                    <span class="feature-toggle">+</span>
+                </div>
+                <div class="feature-content">
+                    <p class="feature-description">Most fabric softeners use seed oil derivatives as cheap fillers—ingredients that coat fabrics, trap odors, and irritate skin. We source every ingredient from whole plants, not industrial seed oils. No canola, no soybean, no sunflower derivatives. Just honest botanical ingredients that work with your textiles, not against them.</p>
+                </div>
+            </div>
+
+            <div class="feature-item" onclick="toggleFeature(this)">
+                <div class="feature-header">
+                    <h3 class="feature-title">Hypoallergenic by design</h3>
+                    <span class="feature-toggle">+</span>
+                </div>
+                <div class="feature-content">
+                    <p class="feature-description">Every ingredient undergoes rigorous dermatological testing to ensure compatibility with even the most sensitive skin. No synthetic fragrances, no harsh preservatives, no known allergens. Safe for babies, gentle for adults with eczema or dermatitis. This is fabric care you can trust on your skin.</p>
+                </div>
+            </div>
+
+            <div class="feature-item" onclick="toggleFeature(this)">
+                <div class="feature-header">
+                    <h3 class="feature-title">Fiber preservation</h3>
+                    <span class="feature-toggle">+</span>
+                </div>
+                <div class="feature-content">
+                    <p class="feature-description">Unlike conventional softeners that coat fibers with synthetic waxes, our vinegar-based formula actually removes buildup and restores fabric to its natural state. Colors stay vibrant, absorbency remains intact, and textiles maintain their original breathability. We extend the life of your clothes by treating them properly.</p>
+                </div>
+            </div>
+
+            <div class="feature-item" onclick="toggleFeature(this)">
+                <div class="feature-header">
+                    <h3 class="feature-title">Completely biodegradable</h3>
+                    <span class="feature-toggle">+</span>
+                </div>
+                <div class="feature-content">
+                    <p class="feature-description">Every ingredient breaks down naturally in water systems. Safe for septic tanks, greywater systems, and the environment. Our pods are made from plant-based film that dissolves completely—no microplastics, no synthetic residues. What goes down your drain returns safely to the earth.</p>
+                </div>
+            </div>
+
+            <div class="feature-item" onclick="toggleFeature(this)">
+                <div class="feature-header">
+                    <h3 class="feature-title">Sustainable packaging</h3>
+                    <span class="feature-toggle">+</span>
+                </div>
+                <div class="feature-content">
+                    <p class="feature-description">Post-consumer recycled materials form our containers, which are themselves fully recyclable. We've eliminated unnecessary packaging, reduced shipping weight, and designed every element for minimal environmental impact. Our pods are concentrated—you need fewer of them, which means less waste overall.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 lïnn. Founded by Mathew Godinez.</p>
+        <p style="margin-top: 1rem; opacity: 0.8;">Natural fabric care for modern living</p>
+    </footer>
+
+    <script>
+        function toggleFeature(element) {
+            const isActive = element.classList.contains('active');
+            
+            document.querySelectorAll('.feature-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            if (!isActive) {
+                element.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
